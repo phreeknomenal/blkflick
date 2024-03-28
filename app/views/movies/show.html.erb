@@ -1,0 +1,49 @@
+<div class="mb-48">
+  <div class="flex gap-8">
+    <%# Main Content %>
+    <div class="w-3/4 p-8 text-lg bg-zinc-300/25" style="border-radius: 30px;">
+      <div class="jumbotron mb-8" style="border-radius: 15px;">
+        <div class="hero" style="background-image: linear-gradient(0deg, rgba(24,24,27,0.8) 18%, rgba(0,0,0,0) 100%), url('<%= image_url @movie.banner_image %>')">
+          <%= movie_genre_badge(@movie.genres) %>
+          <h1 class="font-bold mt-2 mb-4" style="line-height: 5rem;"><%= @movie.title %></h1>
+          <p class="text-lg"><%= @movie.excerpt %></p>
+        </div>
+      </div>
+      <%= render partial: "movies/tabs", locals: {movie: @movie} %>
+      <%= render partial: "movies/tabs/#{movie_tab_partial(params[:tab])}" %>
+    </div>
+    
+    <%# Right-Side Content %>
+    <div class="w-1/4">
+      <div class="bg-zinc-300/25 rounded-lg overflow-hidden p-8" style="border-radius: 30px;">
+        <img class="rounded-lg mb-4" src="<%= @movie.poster %>">
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Release Date: </span><%= @movie.release_date.strftime("%B %e, %Y") %></p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Runtime: </span><%= @movie.duration %></p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Genre: </span>
+          <% @movie.genres.each do |genre| %>
+            <%= genre.name %>&nbsp;
+          <% end %>
+        </p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Favorite Quote: </span>"<%#= @movie.best_quote %>"</p>
+        <div class="bg-zinc-300 p-8 rounded-xl my-8" style="">
+        <h2 class="font-bold">Directors</h2>
+        <% @movie.directors.each do |d| %>
+            <p><%= d.person.first_name %>, <%= d.person.last_name %></p>
+          <% end %>
+        </div>
+
+        <div class="bg-zinc-500 p-8 rounded-xl" style="">
+          <h2 class="font-bold">Writers</h2>
+          <% @movie.writers.each do |w| %>
+            <p><%= w.person.first_name %>, <%= w.person.last_name %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%# <div class="flex gap-1 mb-10"> %>
+  <%#= link_to "Edit", edit_movie_path, class: "bg-indigo-500 text-white px-4 py-2 rounded" %>
+  <%#= button_to "Delete", @movie, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded" %>
+  <%#= link_to "See All", movies_path, class: "bg-indigo-500 text-white px-4 py-2 rounded" %>
+<%# </div> %>

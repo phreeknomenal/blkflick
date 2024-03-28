@@ -1,0 +1,54 @@
+<%= form_with(model: director) do |form| %>
+  <% if director.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(director.errors.count, "error") %> prohibited this director from being saved:</h2>
+
+      <ul>
+        <% director.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div class="field bg-zinc-800 rounded p-4">
+      <%= form.label :first_name, class: "block mb-1" %>
+      <%= form.text_field :first_name, class: "border w-full text-gray-900 rounded py-1 px-2" %>
+    </div>
+
+    <div class="field bg-zinc-800 rounded p-4">
+      <%= form.label :last_name, class: "block mb-1" %>
+      <%= form.text_field :last_name, class: "border w-full text-gray-900 rounded py-1 px-2" %>
+    </div>
+
+    <div class="field bg-zinc-800 rounded p-4">
+      <%= form.label :photo, class: "block mb-1" %>
+      <%= form.text_field :photo, class: "border w-full text-gray-900 rounded py-1 px-2" %>
+    </div>
+
+    <div class="field bg-zinc-800 rounded p-4">
+      <%= form.label :country_of_birth, class: "block mb-1" %>
+      <%= form.text_field :country_of_birth, class: "border w-full text-gray-900 rounded py-1 px-2" %>
+    </div>
+
+    <div class="field bg-zinc-800 rounded p-4">
+      <%= form.label :date_of_birth, class: "block mb-1" %>
+      <%= form.date_field :date_of_birth, class: "border w-full text-gray-900 rounded py-1 px-2" %>
+    </div>
+
+    <div class="field bg-zinc-800 rounded p-4">
+      <%= form.label :date_of_death, class: "block mb-1" %>
+      <%= form.date_field :date_of_death, class: "border w-full text-gray-900 rounded py-1 px-2" %>
+    </div>
+  </div>
+
+  <div class="field bg-zinc-800 rounded p-4 mt-4">
+    <%= form.label :biography, class: "block mb-1" %>
+    <%= form.rich_text_area :biography, class: "border text-gray-900 rounded py-1 px-2" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "actions mt-10 bg-indigo-500 inline-block px-4 py-2 rounded cursor-pointer" %>
+  </div>
+<% end %>

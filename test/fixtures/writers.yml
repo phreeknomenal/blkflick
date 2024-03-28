@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: writers
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  movie_id   :integer
+#  person_id  :integer          not null
+#
+# Indexes
+#
+#  index_writers_on_movie_id   (movie_id)
+#  index_writers_on_person_id  (person_id)
+#
+# Foreign Keys
+#
+#  movie_id   (movie_id => movies.id)
+#  person_id  (person_id => people.id)
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

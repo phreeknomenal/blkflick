@@ -1,0 +1,60 @@
+@import 'trix/dist/trix.css';
+@import 'actiontext';
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body { font-family: "Plus Jakarta Sans", sans-serif; }
+
+ .jumbotron {       width: 100%; position: relative; border-radius: 30px; overflow: hidden; }
+ .hero {            width: 100%; height: 100%; padding: 300px 2rem 3rem 3rem; background-size: cover; background-position: center;}
+ .hero.tv {         background-image: linear-gradient(0deg, rgba(24,24,27,1) 18%, rgba(0,0,0,0) 100%), url('/images/fpob.png');}
+ .hero.movies {         background-image: linear-gradient(0deg, rgba(24,24,27,1) 18%, rgba(0,0,0,0) 100%), url('/images/dashbg1.png'); background-position: center;}
+ .hero.directors {         background-image: linear-gradient(0deg, rgba(24,24,27,1) 18%, rgba(0,0,0,0) 100%), url('/images/directors.jpg'); background-position: center;}
+ .hero.actors {         background-image: linear-gradient(0deg, rgba(24,24,27,1) 18%, rgba(0,0,0,0) 100%), url('/images/actors.jpg'); background-position: center;}
+ .hero h1 {         font-size: 5rem; color: white; }
+
+ /* .dashbg {     background-image: url('/images/dashbg1.png'); background-repeat: no-repeat; background-attachment: fixed; } */
+
+ .angry-multigradient {
+    width: 100%;
+    background: radial-gradient(circle at 0% 52%, rgba(109,40,217,1) 0%, rgba(0,0,0,1) 84%, rgba(0,0,0,1) 99%);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .navbutton:hover > .navlink {
+    display: block;
+    background-color: #8b5cf6;
+    padding: 10px 15px;
+    border-radius: 30px;
+  }
+
+  .checkbox-columns {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .column {
+    flex: 1 1 160px;
+  }
+  
+  .form-check {
+    margin-bottom: 10px;
+  }
+ 
+ 

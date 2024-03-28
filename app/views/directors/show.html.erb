@@ -1,0 +1,34 @@
+<div class="rounded-lg p-10 my-10">
+  <div class="w-full mb-10">
+    <div class="mx-auto mb-4 bg-[url('<%= @director.photo %>')] bg-center bg-cover rounded-lg" style="width: 300px; height: 300px; border-radius: 300px;"></div>
+    <h2 class="text-2xl text-center font-bold"><%= @director.full_name %></h2>
+    <p class="text-indigo-500 text-center font-bold"><%= @director.dob_formatted %> (</span><%= @director.age %>) - <%= @director.country_of_birth %></p>
+    <% @director.date_of_death? ? "Yes" : "No" %>
+  </div>
+  <div class="w-full mb-8 text-gray-500">
+    <h2 class="text-2xl text-indigo-500 font-bold mb-0">Biography</h2>
+    <%= @director.biography %>
+  </div>
+  <h2 class="text-2xl text-indigo-500 font-bold">Filmography</h2>
+  <div class="grid grid-cols-4 gap-8">
+    <% @movies.each do |movie| %>
+      <div class="rounded-lg">
+        <%= link_to movie do %>
+          <img class="rounded-lg h-80 w-full" src="<%= movie.poster %>" alt="<%= movie.title %>" />
+        <% end %>
+      </div>
+    <% end %>
+    <% @shows.each do |show| %>
+      <div class="rounded-lg">
+        <%= link_to show do %>
+          <img class="rounded-lg h-80 w-full" src="<%= show.poster %>" alt="<%= show.title %>" />
+        <% end %>
+      </div>
+    <% end %>
+</div>
+
+<div class="flex gap-2">
+  <%= link_to 'Edit', edit_director_path(@director), class: "bg-indigo-500 text-white px-4 py-2 rounded" %>
+  <%= button_to "Delete", @director, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded" %>
+  <%= link_to 'Back', directors_path, class: "bg-indigo-500 text-white px-4 py-2 rounded" %>
+</div>

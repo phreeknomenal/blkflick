@@ -1,0 +1,7 @@
+<div class=" mx-auto p-8 bg-zinc-300/25" style="border-radius: 30px;">
+  <h3 class="text-xs text-white">Movie > Edit </h3>
+  <h2 class="text-4xl font-bold text-violet-500"><%= @movie.title %></h2>
+  <p class="mb-10 text-md text-white">Update details for <%= @movie.title %></p>
+
+  <%= render "form", movie: @movie %>
+</div>

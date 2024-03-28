@@ -1,0 +1,59 @@
+<%= form_with(model: person) do |form| %>
+  <% if person.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+        <% person.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3 class="text-2xl text-violet-400 font-bold">Personal Details</h3>
+  <p class="text-md text-white">Update biographical details about a person.</p>
+  <hr class="h-px mt-2 bg-zinc-300/30 border-0 mb-4">
+  <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 mb-8">
+    <div class="">
+      <%= form.label :first_name, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.text_field :first_name, class: "bg-zinc-300/30 text-white text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :last_name, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.text_field :last_name, class: "bg-zinc-300/30 text-white text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :date_of_birth, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.date_field :date_of_birth, class: "bg-zinc-300/30 text-white text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :date_of_death, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.date_field :date_of_death, class: "bg-zinc-300/30 text-white text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :place_of_birth, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.text_field :place_of_birth, class: "bg-zinc-300/30 text-white text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :photo, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.text_field :photo, class: "bg-zinc-300/30 text-white text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5" %>
+    </div>
+  </div>
+
+  <h3 class="text-2xl text-violet-400 font-bold">Personal Biography</h3>
+  <p class="text-md text-white">Enter a biography for this person.</p>
+  <hr class="h-px mt-2 bg-zinc-300/30 border-0 mb-4">
+  <div class="mb-10">
+    <div class="">
+      <%= form.label :biography, class: "block mb-2 text-sm font-medium text-white" %>
+      <%= form.rich_text_area :biography, class: "bg-zinc-300/30 text-white border-none text-md rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5" %>
+    </div> 
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-violet-500 hover:bg-violet-700 cursor-pointer rounded-lg focus:ring-4 focus:ring-indigo-200" %>
+  </div>
+<% end %>
+
+

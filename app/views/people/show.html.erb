@@ -1,0 +1,38 @@
+<div class="mb-48">
+  <div class="flex gap-8">
+    <%# Main Content %>
+    <div class="w-3/4 p-8 text-lg bg-zinc-300/25" style="border-radius: 30px;">
+      <h3 class="text-xs text-white">Directors > Person  </h3>
+      <h2 class="text-4xl font-bold text-violet-400 mb-8"><%= @person.full_name %></h2>
+
+      <div class="w-full mb-8 text-white">
+        <h2 class="text-2xl text-violet-400 font-bold mb-0">Biography</h2>
+        <%= @person.biography %>
+      </div>
+
+      <div class="w-full mb-8 text-white">
+        <h2 class="text-2xl text-violet-400 font-bold mb-0">Movie(s) Directed:</h2>
+        <% @person.movies.each do |m| %>
+          <img class="w-24 h-24 rounded-full mb-8" src="<%= m.poster %>" alt="<%= m.title %>">
+          <p><%= m.title %></p>
+        <% end %>
+        <%= @directed_movies.movie.title %>
+      </div>
+    </div>
+
+    <div class="w-1/4">
+      <div class="bg-zinc-300/25 rounded-lg overflow-hidden p-8" style="border-radius: 30px;">
+        <img class="w-full rounded-lg mb-8" style="height: 375px;" src="<%= @person.photo %>" alt="<%= @person.full_name %>">
+        <div class="w-full text-white">
+          <h2 class="text-2xl text-violet-400 font-bold mb-0">Personal Info</h2>
+          <p class="text-lg"><span class="font-bold text-violet-400">Age: </span><%= @person.age %></p>
+          <p class="text-lg"><span class="font-bold text-violet-400">Born: </span><%= @person.date_of_birth.strftime("%B %e, %Y") %></p>
+          <% if @person.date_of_death? %>
+            <p class="text-lg"><span class="font-bold text-violet-400">Died: </span><%= @person.date_of_death %></p>
+          <% end %>
+          <p class="text-lg"><span class="font-bold text-violet-400">Birthplace: </span><%= @person.place_of_birth %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

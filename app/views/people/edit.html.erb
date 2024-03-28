@@ -1,0 +1,7 @@
+<div class=" mx-auto p-8 bg-zinc-300/25" style="border-radius: 30px;">
+  <h3 class="text-xs text-white">Person > Edit </h3>
+  <h2 class="text-4xl font-bold text-violet-400"><%= @person.full_name %></h2>
+  <p class="mb-10 text-md text-white">Update details for <%= @person.full_name %>'s profile</p>
+
+  <%= render "form", person: @person %>
+</div>

@@ -1,0 +1,8 @@
+<%= render partial: "dashboard/jumbotron", locals: { hero: @hero_movie } %>
+
+<div class="flex gap-10">
+    <div class="w-full">
+        <%= render partial: "dashboard/latest_movies", locals: { movies: @movies.order(id: :desc) } %>
+        <%#= render partial: "dashboard/latest_shows", locals: { shows: @shows.order(id: :desc) } %>
+    </div>
+</div>

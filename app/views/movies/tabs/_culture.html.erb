@@ -1,0 +1,7 @@
+<div class="text-white pr-10">
+  <% if @movie.culture? %>
+    <%= @movie.culture %>
+  <% else %>
+    <%= render partial: "shared/no_content" %>
+  <% end %>
+</div>

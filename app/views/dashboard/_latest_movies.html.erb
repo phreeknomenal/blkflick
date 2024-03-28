@@ -1,0 +1,18 @@
+<div class="my-8">
+  <h2 class="mb-1 text-4xl font-extrabold text-white">Latest Movies</h2>
+  <p class="w-3/4 text-white mb-8">Explore the best in cinema with our curated selection of featured movies. Click on any image card below to dive into a world of in-depth information, reviews, and captivating insights. Let the storytelling begin!</p>
+
+  <div class="grid grid-cols-4 gap-8 mt-4 mb-10">
+    <% movies.first(4).each do |m| %>
+      <%= link_to m do %>
+        <div class="w-full bg-[url('<%= m.banner_image %>')] bg-cover bg-center overflow-hidden" style="border-radius: 30px;">
+          <div class="p-6 pt-72" style="background: linear-gradient(0deg, rgba(24,24,27,0.8) 9%, rgba(0,0,0,0) 100%);">
+            <%= movie_genre_badge(m.genres) %>
+            <h2 class="font-bold items-bottom text-xl mt-2" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; line-clamp: 1; -webkit-box-orient: vertical;"><%= m.title %></h2>
+            <p class="text-white text-sm font-normal" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical;"><%= m.excerpt %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

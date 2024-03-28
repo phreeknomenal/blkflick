@@ -1,0 +1,17 @@
+<div class="text-white pr-10 mb-10">
+  <h2 class="text-2xl font-bold mb-2 text-white">Movie Overview</h2>
+  <% if @movie.overview? %>
+    <%= @movie.overview %>
+  <% else %>
+    <%= render partial: "shared/no_content" %>
+  <% end %>
+</div>
+
+<div class="text-white pr-10">
+  <h2 class="text-2xl font-bold mb-2 text-white">Plot Overview</h2>
+  <% if @movie.plot? %>
+    <%= @movie.plot %>
+  <% else %>
+    <%= render partial: "shared/no_content" %>
+  <% end %>
+</div>

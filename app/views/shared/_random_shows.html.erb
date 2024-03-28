@@ -1,0 +1,16 @@
+<h2 class="text-center mb-1 text-4xl font-extrabold text-gray-900 dark:text-white">Featured <span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-indigo-400">Shows</span></h2>
+<p class="text-center text-gray-500 dark:text-gray-400 mb-5">Explore the best in cinema with our curated selection of featured movies. Click on any image card below to dive into a world of in-depth information, reviews, and captivating insights. Let the storytelling begin!</p>
+
+<div class="grid grid-cols-4 gap-8 mt-4">
+  <% shows.last(4).each do |s| %>
+    <%= link_to s do %>
+      <div class="w-full rounded">
+        <img class="w-full rounded-lg mb-2" style="height: 375px;" src="<%= s.poster %>" alt="<%= s.title %>">
+        <h2 class="font-bold text-xl text-indigo-500"><%= s.title %></h2>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="text-center mt-8">
+  <%= link_to "View All Movies", shows_path, class: "bg-indigo-500 text-white px-4 py-2 rounded" %>
+</div>
