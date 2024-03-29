@@ -11,13 +11,14 @@
       </div>
 
       <div class="w-full mb-8 text-white">
-        <h2 class="text-2xl text-violet-400 font-bold mb-4">Movie(s) Directed:</h2>
+        <h2 class="text-2xl text-violet-400 font-bold">Movie(s) Directed:</h2>
+        <p class="mb-4">Movies/Films Directed by <%= @director.person.full_name %></p>
         <div class="flex gap-8">
           <% @director.movies.each do |m| %>
-            <div class="p-4 border rounded-xl text-center">
-              <img class="w-24 h-24 mx-auto rounded-full mb-4" src="<%= m.poster %>" alt="<%= m.title %>">
-              <p><%= m.title %></p>
-            </div>
+            <%= link_to m, class: "w-1/6 py-4 rounded-xl bg-zinc-200/25 hover:bg-violet-400 text-center" do %>
+              <img class="w-32 h-32 mx-auto rounded-full mb-4" src="<%= m.poster %>" alt="<%= m.title %>">
+                <p><%= m.title %></p>
+            <% end %>
           <% end %>
         </div>
       </div>

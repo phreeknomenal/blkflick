@@ -19,7 +19,9 @@
 #
 class Movie < ApplicationRecord
   belongs_to :director
-  belongs_to :writer
+
+  has_many :movie_genres
+  has_many :genres, through: :movie_genres
 
   validates :title, presence: true, uniqueness: true
   validates :release_date, presence: true
@@ -33,4 +35,8 @@ class Movie < ApplicationRecord
   # validates :overview, presence: true
   # validates :trailer, presence: true
   # validates :rating, presence: true
+
+  def formatted_duration
+    "#{duration / 60}hours #{duration % 60}minutes"
+  end
 end

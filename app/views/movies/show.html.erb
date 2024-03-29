@@ -18,25 +18,19 @@
       <div class="bg-zinc-300/25 rounded-lg overflow-hidden p-8" style="border-radius: 30px;">
         <img class="rounded-lg mb-4" src="<%= @movie.poster %>">
         <p class="text-white text-lg"><span class="font-bold text-violet-500">Release Date: </span><%= @movie.release_date.strftime("%B %e, %Y") %></p>
-        <p class="text-white text-lg"><span class="font-bold text-violet-500">Runtime: </span><%= @movie.duration %></p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Runtime: </span><%= @movie.formatted_duration %></p>
         <p class="text-white text-lg"><span class="font-bold text-violet-500">Genre: </span>
           <% @movie.genres.each do |genre| %>
             <%= genre.name %>&nbsp;
           <% end %>
         </p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Director: </span><%= @movie.director.person.full_name %></p>
         <p class="text-white text-lg"><span class="font-bold text-violet-500">Favorite Quote: </span>"<%#= @movie.best_quote %>"</p>
-        <div class="bg-zinc-300 p-8 rounded-xl my-8" style="">
-        <h2 class="font-bold">Directors</h2>
-        <% @movie.directors.each do |d| %>
-            <p><%= d.person.first_name %>, <%= d.person.last_name %></p>
-          <% end %>
-        </div>
-
         <div class="bg-zinc-500 p-8 rounded-xl" style="">
           <h2 class="font-bold">Writers</h2>
-          <% @movie.writers.each do |w| %>
-            <p><%= w.person.first_name %>, <%= w.person.last_name %></p>
-          <% end %>
+          <%# @movie.writers.each do |w| %>
+            <p><%#= w.person.first_name %>, <%#= w.person.last_name %></p>
+          <%# end %>
         </div>
       </div>
     </div>
