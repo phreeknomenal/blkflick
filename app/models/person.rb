@@ -14,11 +14,12 @@
 #  updated_at     :datetime         not null
 #
 class Person < ApplicationRecord
-  has_one :directors
-  has_many :movies, through: :directors
-
+  has_many :directors
   has_many :writers
-  has_many :movies, through: :writers
+  
+  has_many :directed_movies, through: :directors, source: :movies
+  has_many :written_movies, through: :writers, source: :movies
+  
   
   validates :first_name, presence: true
   validates :last_name, presence: true

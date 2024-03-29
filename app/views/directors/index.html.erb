@@ -14,7 +14,7 @@
         <% current_letter = d.person.last_name[0].upcase %>
         <h2><%= current_letter %></h2>
       <% end %>
-      <%= link_to d.person do %>
+      <%= link_to d do %>
         <p class="font-bold text-xl text-indigo-500"><%= d.person.last_name %>, <%= d.person.first_name %></p>
       <% end %>
     <% end %>
