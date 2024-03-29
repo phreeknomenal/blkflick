@@ -4,6 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  banner_image :string
+#  best_quote   :string
 #  duration     :integer
 #  excerpt      :string
 #  overview     :string

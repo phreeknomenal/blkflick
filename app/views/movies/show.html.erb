@@ -25,7 +25,7 @@
           <% end %>
         </p>
         <p class="text-white text-lg"><span class="font-bold text-violet-500">Director: </span><%= @movie.director.person.full_name %></p>
-        <p class="text-white text-lg"><span class="font-bold text-violet-500">Favorite Quote: </span>"<%#= @movie.best_quote %>"</p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Favorite Quote: </span>"<%= @movie.best_quote %>"</p>
         <div class="bg-zinc-500 p-8 rounded-xl" style="">
           <h2 class="font-bold">Writers</h2>
           <%# @movie.writers.each do |w| %>

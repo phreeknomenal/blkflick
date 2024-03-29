@@ -22,4 +22,8 @@ class Director < ApplicationRecord
   belongs_to :person
   has_many :movies
   validates :person_id, uniqueness: { scope: :movie_id }
+
+  def full_name
+    person.full_name
+  end
 end
