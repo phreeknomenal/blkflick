@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_29_050214) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_27_234549) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -79,15 +79,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_29_050214) do
     t.integer "duration"
     t.string "poster"
     t.string "banner_image"
+    t.string "excerpt"
+    t.string "best_quote"
     t.text "plot"
     t.string "overview"
     t.string "trailer"
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "excerpt"
-    t.integer "director_id"
-    t.string "best_quote"
   end
 
   create_table "people", force: :cascade do |t|

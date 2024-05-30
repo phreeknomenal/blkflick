@@ -6,17 +6,15 @@
   </div>
 </div>
 
-<div class="max-w-7xl mx-auto">
-  <div class="grid grid-cols-4 gap-8 mt-4">
-    <% @movies.each do |movie| %>
-      <%= link_to movie do %>
-        <div class="w-full">
-          <img class="w-full rounded-lg mb-4" style="height: 375px;" src="<%= movie.poster %>" alt="<%= movie.title %>">
-          <h2 class="font-bold text-xl text-indigo-500"><%= movie.title %></h2>
-        </div>
-      <% end %>
+<div class="grid grid-cols-4 gap-8 mt-4">
+  <% @movies.each do |movie| %>
+    <%= link_to movie do %>
+      <div class="w-full">
+        <img class="w-full rounded-lg mb-4" style="height: 375px;" src="<%= movie.poster %>" alt="<%= movie.title %>">
+        <h2 class="font-bold text-xl text-indigo-500"><%= movie.title %></h2>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
 
 <%# <h1 class="text-5xl text-indigo-500 font-bold mb-10 inline-block">Movies</h1> %>

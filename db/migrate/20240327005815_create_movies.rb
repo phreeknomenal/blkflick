@@ -6,6 +6,8 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.integer :duration
       t.string :poster
       t.string :banner_image
+      t.string :excerpt
+      t.string :best_quote
       t.text :plot
       t.string :overview
       t.string :trailer

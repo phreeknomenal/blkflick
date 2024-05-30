@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <div class="hero directors">
+    <h1 class="font-bold">Writers Directory</h1>
+    <p class="max-w-2xl mx-auto mb-8">Discover the Rich Tapestry of Black Excellence: Immerse Yourself in Our Extensive Database Featuring a Diverse Array of Black Film and TV Shows, Unveiling Compelling Narratives, Iconic Performances, and Cultural Significance.</p>
+    <%#= link_to 'Featured Director/Creator', new_show_path, class: "bg-indigo-500 text-white px-4 py-2 rounded inline-block text-center mx-auto align-center" %>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto mt-10">
+  <div class="">
+    <% current_letter = nil %>
+    <% @writers.each do |w| %>
+      <% if current_letter != w.person.last_name[0].upcase %>
+        <% current_letter = w.person.last_name[0].upcase %>
+        <h2><%= current_letter %></h2>
+      <% end %>
+      <%= link_to w do %>
+        <p class="font-bold text-xl text-indigo-500"><%= w.person.last_name %>, <%= w.person.first_name %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

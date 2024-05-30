@@ -16,9 +16,9 @@
 class Person < ApplicationRecord
   has_many :directors
   has_many :writers
+  has_many :written_movies, through: :writers, source: :movies
   
   has_many :directed_movies, through: :directors, source: :movies
-  has_many :written_movies, through: :writers, source: :movies
   
   
   validates :first_name, presence: true

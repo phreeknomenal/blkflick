@@ -20,7 +20,7 @@
 #
 class Director < ApplicationRecord
   belongs_to :person
-  has_many :movies
+  belongs_to :movie
   validates :person_id, uniqueness: { scope: :movie_id }
 
   def full_name

@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :movies
   resources :persons
   resources :stars
+  resources :writers
 
 end

@@ -16,18 +16,26 @@
 #  trailer      :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  director_id  :integer
 #
 class Movie < ApplicationRecord
-  belongs_to :director
+  has_many :directors
+  has_many :directed_movies, through: :directors, source: :person
+  has_many :people, through: :directors
+
+  has_many :writers
+  has_many :written_movies, through: :writers, source: :person
+  has_many :people, through: :writers
 
   has_many :movie_genres
   has_many :genres, through: :movie_genres
 
-  validates :title, presence: true, uniqueness: true
-  validates :release_date, presence: true
-  validates :duration, presence: true
-  validates :poster, presence: true
+  has_many :movie_stars
+  has_many :people, through: :movie_stars
+
+  # validates :title, presence: true, uniqueness: true
+  # validates :release_date, presence: true
+  # validates :duration, presence: true
+  # validates :poster, presence: true
 
   has_rich_text :overview
   has_rich_text :plot

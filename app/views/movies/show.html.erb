@@ -24,13 +24,17 @@
             <%= genre.name %>&nbsp;
           <% end %>
         </p>
-        <p class="text-white text-lg"><span class="font-bold text-violet-500">Director: </span><%= @movie.director.person.full_name %></p>
+        <p class="text-white text-lg"><span class="font-bold text-violet-500">Director: </span>
+          <% @movie.directors.each do |d| %>
+            <%= d.person.full_name %>&nbsp;
+          <% end %>
+        </p>
         <p class="text-white text-lg"><span class="font-bold text-violet-500">Favorite Quote: </span>"<%= @movie.best_quote %>"</p>
         <div class="bg-zinc-500 p-8 rounded-xl" style="">
           <h2 class="font-bold">Writers</h2>
-          <%# @movie.writers.each do |w| %>
-            <p><%#= w.person.first_name %>, <%#= w.person.last_name %></p>
-          <%# end %>
+          <% @movie.writers.each do |w| %>
+            <p><%= w.person.first_name %>, <%= w.person.last_name %></p>
+          <% end %>
         </div>
       </div>
     </div>
